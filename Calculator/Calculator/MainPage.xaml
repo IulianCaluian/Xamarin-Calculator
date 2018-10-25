@@ -54,7 +54,7 @@
 
 
             <Label x:Name="textCalc" Grid.Row="0" Text="22+10" TextColor="White" FontAttributes="Bold"
-               FontSize="40" Grid.ColumnSpan="4" Margin="20" HorizontalTextAlignment="End"/>
+               FontSize="32" Grid.ColumnSpan="4" Margin="20" HorizontalTextAlignment="End"/>
 
             <Button Grid.Row="1" Grid.Column="0" x:Name="btn7" Text="7" Style="{StaticResource styleOperandButton}" />
             <Button Grid.Row="1" Grid.Column="1" x:Name="btn8" Text="8" Style="{StaticResource styleOperandButton}" />
