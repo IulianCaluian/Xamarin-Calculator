@@ -4,11 +4,81 @@
              xmlns:local="clr-namespace:Calculator"
              x:Class="Calculator.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="colorAppBackground">#444444</Color>
+            <Color x:Key="colorPrimary">#FFA500</Color>
+
+            <Style x:Key="styleOperatorButton" TargetType="Button">
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="TextColor"       Value="White" />
+                <Setter Property="BackgroundColor" Value="#FFA500" />
+                <Setter Property="FontSize"        Value="20" />
+                
+            </Style>
+
+            <Style x:Key="styleOperandButton" TargetType="Button">
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="TextColor"       Value="Black" />
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="FontSize"        Value="20" />
+            </Style>
+
+            <Style x:Key="styleClearButton" TargetType="Button">
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="TextColor"       Value="White" />
+                <Setter Property="BackgroundColor" Value="Gray" />
+                <Setter Property="FontSize"        Value="20" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <!-- Drum buttons -->
+        <Grid Margin =" 0" BackgroundColor="{StaticResource colorAppBackground}" RowSpacing="1" ColumnSpacing="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="140" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+            <Label x:Name="textCalc" Grid.Row="0" Text="22+10" TextColor="White" FontAttributes="Bold"
+               FontSize="40" Grid.ColumnSpan="4" Margin="20" HorizontalTextAlignment="End"/>
+
+            <Button Grid.Row="1" Grid.Column="0" x:Name="btn7" Text="7" Style="{StaticResource styleOperandButton}" />
+            <Button Grid.Row="1" Grid.Column="1" x:Name="btn8" Text="8" Style="{StaticResource styleOperandButton}" />
+            <Button Grid.Row="1" Grid.Column="2" x:Name="btn9" Text="9" Style="{StaticResource styleOperandButton}" />
+            <Button Grid.Row="1" Grid.Column="3" x:Name="btnDiv" Text="/" Style="{StaticResource styleOperatorButton}" />
+
+            <Button Grid.Row="2" Grid.Column="0" x:Name="btn4" Text="4" Style="{StaticResource styleOperandButton}" />
+            <Button Grid.Row="2" Grid.Column="1" x:Name="btn5" Text="5" Style="{StaticResource styleOperandButton}" />
+            <Button Grid.Row="2" Grid.Column="2" x:Name="btn6" Text="6" Style="{StaticResource styleOperandButton}" />
+            <Button Grid.Row="2" Grid.Column="3" x:Name="btnMul" Text="*" Style="{StaticResource styleOperatorButton}" />
+
+            <Button Grid.Row="3" Grid.Column="0" x:Name="btn1" Text="1" Style="{StaticResource styleOperandButton}" />
+            <Button Grid.Row="3" Grid.Column="1" x:Name="btn2" Text="2" Style="{StaticResource styleOperandButton}" />
+            <Button Grid.Row="3" Grid.Column="2" x:Name="btn3" Text="3" Style="{StaticResource styleOperandButton}" />
+            <Button Grid.Row="3" Grid.Column="3" x:Name="btnMin" Text="-" Style="{StaticResource styleOperatorButton}" />
+
+            <Button Grid.Row="4" Grid.Column="0" x:Name="btn0" Grid.ColumnSpan="3" Text="0" Style="{StaticResource styleOperandButton}" />
+            <Button Grid.Row="4" Grid.Column="3" x:Name="btnPlu" Text="+" Style="{StaticResource styleOperatorButton}" />
+
+            <Button Grid.Row="5" Grid.Column="0" x:Name="btnClr" Text="C" Style="{StaticResource styleClearButton}" />
+            <Button Grid.Row="5" Grid.Column="1" x:Name="btnEqu" Text="=" Grid.ColumnSpan="3" Style="{StaticResource styleOperatorButton}" />
+ 
+        </Grid>
+
+    </ContentPage.Content>
 
 </ContentPage>
